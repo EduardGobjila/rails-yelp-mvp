@@ -1,0 +1,7 @@
+
+<div class='container pt-4 col-4'>
+  <% @restaurants.each do |restaurant| %>
+    <h3><%= restaurant.name %></h3><br><%= restaurant.address %> <br><%= restaurant.phone_number %> <br><%= restaurant.category %><br>
+    <%= link_to 'Visit the restaurant', restaurant, class: 'btn btn-danger' %>
+  <% end %>
+</div>

@@ -1,0 +1,19 @@
+
+<div class="container pt-5 col-4">
+  <h1>Welcome to <%= @restaurant.name %></h1>
+  <h3><%= @restaurant.address %></h3>
+  <h4><%= @restaurant.category %></h4>
+  <h5><%= @restaurant.phone_number %></h5>
+
+  <h2>Reviews for <%= @restaurant.name %></h2>
+  <h6><% @restaurant.reviews.each do |review| %>
+    <%= review.content %>  <%= review.rating %> <br>
+  <% end %></h6>
+</div>
+
+<div class="container">
+  <%= link_to 'Create Restaurant', new_restaurant_path,  class: 'btn btn-success text-white', style: 'margin: 10px;' %> <br>
+  <%= link_to 'Edit a restaurant', edit_restaurant_path, class: 'btn btn-success text-white', style: 'margin: 10px;'  %> <br>
+  <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn btn-success text-white', style: 'margin: 10px;'  %> <br>
+  <%= link_to 'Back to the main page', restaurants_path, class: 'btn btn-success text-white', style: 'margin: 10px;'  %>
+</div>
